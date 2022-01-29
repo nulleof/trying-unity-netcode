@@ -8,12 +8,6 @@ namespace _Game.Scripts {
 	[UpdateInGroup(typeof(ServerSimulationSystemGroup))]
 	public class GoInGameServerSystem : ComponentSystem {
 
-		protected override void OnCreate() {
-			
-			RequireSingletonForUpdate<EnableClientGame>();
-			
-		}
-
 		protected override void OnUpdate() {
 			
 			Entities.WithNone<SendRpcCommandRequestComponent>().ForEach((Entity entity, ref GoInGameRequest req, ref ReceiveRpcCommandRequestComponent reqSrc) => {

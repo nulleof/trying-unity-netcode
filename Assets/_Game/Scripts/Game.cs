@@ -4,8 +4,6 @@ using Unity.Networking.Transport;
 using UnityEngine;
 
 namespace _Game.Scripts {
-	
-	public struct EnableClientGame : IComponentData {}
 
 	[UpdateInWorld(UpdateInWorld.TargetWorld.Default)]
 	public class Game : ComponentSystem {
@@ -21,7 +19,7 @@ namespace _Game.Scripts {
 
 		}
 
-		private ushort _port;
+		private ushort _port = 7878;
 
 
 		protected override void OnUpdate() {
@@ -32,8 +30,6 @@ namespace _Game.Scripts {
 			foreach (var world in World.All) {
 
 				var network = world.GetExistingSystem<NetworkStreamReceiveSystem>();
-				
-				world.EntityManager.CreateEntity(typeof(EnableClientGame));
 				
 				if (world.GetExistingSystem<ClientSimulationSystemGroup>() != null) {
 					

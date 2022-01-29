@@ -9,12 +9,6 @@ namespace _Game.Scripts {
 	[UpdateInGroup(typeof(ClientSimulationSystemGroup))]
 	public class GoInGameClientSystem : ComponentSystem {
 
-		protected override void OnCreate() {
-			
-			RequireSingletonForUpdate<EnableClientGame>();
-			
-		}
-
 		protected override void OnUpdate() {
 			
 			Entities.WithNone<NetworkStreamInGame>().ForEach((Entity entity, ref NetworkIdComponent id) => {

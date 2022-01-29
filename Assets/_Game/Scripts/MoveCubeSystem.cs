@@ -23,8 +23,8 @@ namespace _Game.Scripts {
 
 				if (input.horizontal > 0) translation.Value.x += deltaTime;
 				if (input.horizontal < 0) translation.Value.x -= deltaTime;
-				if (input.vertical > 0) translation.Value.y += deltaTime;
-				if (input.vertical < 0) translation.Value.y -= deltaTime;
+				if (input.vertical > 0) translation.Value.z += deltaTime;
+				if (input.vertical < 0) translation.Value.z -= deltaTime;
 
 			});
 
